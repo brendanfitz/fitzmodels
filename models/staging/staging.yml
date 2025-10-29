@@ -1,0 +1,21 @@
+sources:
+  - name: budget_db
+    database: budget_db
+    schema: staging
+    tables:
+      - name: checking
+      - name: sapphire_reserve
+
+models:
+  - name: stg_checking
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
+  - name: stg_sapphire_reserve
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
