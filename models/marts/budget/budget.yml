@@ -1,0 +1,13 @@
+models:
+  - name: fct_transactions
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
+      - name: amount
+        tests:
+          - not_null
+      - name: transaction_date
+        tests:
+          - not_null
