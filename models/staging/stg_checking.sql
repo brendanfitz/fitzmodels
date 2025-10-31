@@ -1,4 +1,4 @@
-with base as (select * from {{source('budget_db', 'checking')}}),
+with base as (select * from {{source('budget', 'checking')}}),
 renamed as (
   select
       details,

@@ -1,7 +1,7 @@
 sources:
-  - name: budget_db
+  - name: budget
     database: budget_db
-    schema: staging
+    schema: sources
     tables:
       - name: checking
       - name: sapphire_reserve

@@ -1,4 +1,4 @@
-with base as (select * from {{source('budget_db', 'sapphire_reserve')}}),
+with base as (select * from {{source('budget', 'sapphire_reserve')}}),
 renamed as (
   select
     transaction_date::date as transaction_date,
