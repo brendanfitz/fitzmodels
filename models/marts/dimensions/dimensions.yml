@@ -1,0 +1,11 @@
+models:
+  - name: dim_budget_categories
+    columns:
+      - name: category_id
+        tests:
+          - not_null
+          - unique
+      - name: category_name
+        tests:
+          - not_null
+          - unique
