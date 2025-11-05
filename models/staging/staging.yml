@@ -5,6 +5,7 @@ sources:
     tables:
       - name: checking
       - name: sapphire_reserve
+      - name: transaction_categories
 
 models:
   - name: stg_checking
@@ -29,3 +30,21 @@ models:
         tests:
           - not_null
           - unique
+  - name: stg_transaction_categories
+    columns:
+      - name: transaction_id
+        tests:
+          - not_null
+          - unique
+          # update once we have this model created
+          # - relationships:
+          #     arguments:
+          #       to: ref('itm_budget_transactions')
+          #       field: transaction_id
+      - name: category_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_budget_categories')
+                field: category_id
