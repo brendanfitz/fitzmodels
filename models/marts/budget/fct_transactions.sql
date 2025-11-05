@@ -10,7 +10,8 @@ checking_filtered as (
        'checking' as source,
        transaction_type
     from checking
-    where transaction_type not in ('ACCT_XFER', 'LOAN_PMT')
+    where not (transaction_type in ('ACCT_XFER', 'LOAN_PMT')
+               or transaction_description ilike 'CHASE CREDIT CRD AUTOPAY%')
 ),
 sapphire_filtered as (
     select
