@@ -11,7 +11,7 @@ checking_filtered as (
        transaction_type
     from checking
     where not (transaction_type in ('ACCT_XFER', 'LOAN_PMT')
-               or transaction_description ilike 'CHASE CREDIT CRD AUTOPAY%')
+               or transaction_description ilike any (ARRAY['CHASE CREDIT CRD AUTOPAY%', '%BANK        $TRANSFER%']))
 ),
 sapphire_filtered as (
     select
